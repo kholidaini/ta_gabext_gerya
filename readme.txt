@@ -28,3 +28,17 @@ git checkout fe_gede
 
 >git push -u origin be_geyma
 >git push -u origin fe_gede
+
+
+- jika ingin mengupdate keseluruhan project
+jika user master :
+>git pull origin be_geyma
+>git pull origin fe_gede
+
+jika user be_geyma:
+>git pull origin master
+>git pull origin fe_gede
+
+jika user fe_geyma:
+>git pull origin master
+>git pull origin be_geyma
