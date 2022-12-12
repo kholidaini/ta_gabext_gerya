@@ -1,8 +1,8 @@
 tahapan saat ingin develope :
 
 > cloning project
-- git clone https://github.com/kholidaini/ta_gabext_greyima.git geyma
-- git clone https://github.com/kholidaini/ta_gabext_greyima.git gede
+- git clone https://github.com/kholidaini/ta_gabext_gerya.git geyma
+- git clone https://github.com/kholidaini/ta_gabext_gerya.git gede
 
 > inisial
 git config --user.name "username github geyma"
