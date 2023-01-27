@@ -5,8 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Storage;
 
-class Transaksi extends Model
+class FotoKosan extends Model
 {
     use HasFactory,SoftDeletes;
 
@@ -16,20 +17,12 @@ class Transaksi extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'users_id',
-        'price',
-        'status',
-        'payment',
-
+        'kosan_id',
+        'url',
 
     ];
 
-    public function user(){
-        return $this->belongsTo(User::class, 'users_id', 'id');
+    public function getUrlAttribute($url){
+        return config('app.url') . Storage::url($url);
     }
-
-
-
-
-
 }

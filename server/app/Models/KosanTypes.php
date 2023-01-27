@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Transaksi extends Model
+class KosanTypes extends Model
 {
     use HasFactory,SoftDeletes;
 
@@ -16,20 +16,11 @@ class Transaksi extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'users_id',
-        'price',
-        'status',
-        'payment',
-
+        'name',
 
     ];
 
-    public function user(){
-        return $this->belongsTo(User::class, 'users_id', 'id');
+    public function kosans(){
+        return $this->hasMany(Transaksi::class, 'kosan_type_id', 'id');
     }
-
-
-
-
-
 }

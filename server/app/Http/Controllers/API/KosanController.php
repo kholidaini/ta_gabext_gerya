@@ -4,20 +4,18 @@ namespace App\Http\Controllers\API;
 
 use App\Helpers\ResponseFormatter;
 use App\Http\Controllers\Controller;
-use App\Models\kosan;
 use Illuminate\Http\Request;
 
 class KosanController extends Controller
 {
     public function all(Request $request){
-
-
         $id = $request->input('id');
         $limit = $request->input('limit');
         $name = $request->input('id');
-        $description=$request->input('description');
-        $tags = $request->input('tags');
-        $type_id = $request->input('type_id');
+        $description = $request->input('description');
+        $tags=$request->input('kosan_type');
+
+
         $price_from = $request->input('price_from');
         $price_to = $request->input('price_to');
 
