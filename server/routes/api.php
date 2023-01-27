@@ -20,4 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get('kosans', [KosanController::class, 'all']);
+Route::get('kosan', [KosanController::class, 'all']);
+Route::get('kosantype', [KosanTypeController::class, 'all']);

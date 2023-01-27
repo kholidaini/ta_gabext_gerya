@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Helpers\ResponseFormatter;
 use App\Http\Controllers\Controller;
+use App\Models\Kosan;
 use Illuminate\Http\Request;
 
 class KosanController extends Controller
@@ -21,7 +22,7 @@ class KosanController extends Controller
 
 
         if($id){
-            $kosan = kosan::with(['type_id', 'foto_kosan'])->find($id);
+            $kosan = Kosan::with(['kosantype', 'fotokosans'])->find($id);
             if($kosan){
                 return ResponseFormatter::success(
                     $kosan,
@@ -39,7 +40,7 @@ class KosanController extends Controller
             }
         }
 
-        $kosan = kosan::with(['type_id', 'foto_kosan'])->find($id);
+        $kosan = Kosan::with(['kosantype', 'fotokosans']);
 
         if($name){
             $kosan->where('name', 'like', '%' . $name . '%');
@@ -61,9 +62,9 @@ class KosanController extends Controller
             $kosan->where('price','<=',$price_to);
         }
 
-        if($type_id){
-            $kosan->where('type_id',$type_id);
-        }
+        // if($kosantypes){
+        //     $kosan->where('kosantype', $kosantypes);
+        // }
 
         return ResponseFormatter::success(
             $kosan->paginate($limit),
